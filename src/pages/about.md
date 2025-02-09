@@ -7,6 +7,10 @@ title: "About"
 
 I'm **Tanmay Panda**, a full-stack developer with 3 years of experience. I specialize in building scalable and efficient web applications using modern technologies. Passionate about clean code and seamless user experiences, I am always eager to explore new challenges and opportunities in the tech industry.
 
+<div>
+  <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
+</div>
+
 ## Experience
 
 ### Neviton Softech Pvt. Ltd.
