@@ -5,21 +5,22 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 251, 254, 251;
-    --color-text-base: 40, 39, 40;
-    --color-accent: 0, 108, 172;
-    --color-card: 230, 230, 230;
-    --color-card-muted: 205, 205, 205;
-    --color-border: 236, 233, 233;
+    --color-fill: 239, 241, 245; /* Base */
+    --color-text-base: 36, 39, 58; /* Text */
+    --color-accent: 0, 0, 0; /* Black */
+    --color-card: 205, 214, 244; /* Surface1 */
+    --color-card-muted: 186, 194, 222; /* Surface2 */
+    --color-border: 172, 162, 197; /* Overlay1 */
   }
   html[data-theme="dark"] {
-    --color-fill: 33, 39, 55;
-    --color-text-base: 234, 237, 243;
-    --color-accent: 255, 107, 1;
-    --color-card: 52, 63, 96;
-    --color-card-muted: 138, 51, 2;
-    --color-border: 171, 75, 8;
+    --color-fill: 24, 25, 38; /* Base */
+    --color-text-base: 205, 214, 244; /* Text */
+    --color-accent: 166, 227, 161; /* Pastel Green */
+    --color-card: 30, 30, 46; /* Surface0 */
+    --color-card-muted: 49, 50, 68; /* Surface1 */
+    --color-border: 108, 112, 134; /* Overlay0 */
   }
+
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;

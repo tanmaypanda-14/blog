@@ -6,7 +6,7 @@ export const SITE: Site = {
   profile: "https://tanmaypanda.vercel.app/",
   desc: "A hedonistic blog",
   title: "Tanmay's Blog",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "astropaper-og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,

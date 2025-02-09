@@ -3,34 +3,27 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+## About Me
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+I'm **Tanmay Panda**, a full-stack developer with 3 years of experience. I specialize in building scalable and efficient web applications using modern technologies. Passionate about clean code and seamless user experiences, I am always eager to explore new challenges and opportunities in the tech industry.
 
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+## Experience
 
-<div>
-  <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
-</div>
+### Neviton Softech Pvt. Ltd.
 
-## Tech Stack
+**Software Developer | Bengaluru, Karnataka | 2023-2025**
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
+- Designed and developed a document management system capable of creating and signing documents using React, Redux, and MUI.
+- Built APIs using Express, MySQL, and AWS services like S3, SES, and EC2.
+- Worked on Phase 2 of a product launch management system, introducing SSO login, product hierarchy management, and audit trail maintenance.
+- Deployed a Next.js application on AWS using EC2, NGINX, and PM2.
+- Utilized AWS CodeCommit for version control and Jira for sprint management.
 
-## Features
+## Skills
 
-Here are certain features of this site.
+- **Frontend:** HTML, CSS, JavaScript, TypeScript, React, Next.js, Redux, Tailwind, Chakra-UI, Framer Motion
+- **Backend:** Node.js, Express, Prisma, Django
+- **Databases:** MongoDB, PostgreSQL, MySQL
+- **Tools & Technologies:** Git, GraphQL, Apollo, AWS (S3, SES, EC2), Firebase
 
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
-
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+I’m always looking for exciting opportunities to collaborate and create impactful digital experiences. Feel free to reach out!
