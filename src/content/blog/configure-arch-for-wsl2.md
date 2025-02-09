@@ -11,8 +11,8 @@ tags:
   - arch linux
   - installation
   - configuration
-description:
-  A comprehensive guide on installing, configuring, and using ArchWSL2 for an optimized Linux experience on Windows.
+description: >
+  Master installing and configuring ArchWSL2 to create a powerful Linux environment on Windows, complete with troubleshooting tips and best practices.
 ---
 
 # ArchWSL2 Installation and Usage Guide

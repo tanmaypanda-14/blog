@@ -11,7 +11,8 @@ tags:
   - productivity
   - terminal
   - configuration
-description: A comprehensive guide on setting up and customizing WezTerm for an optimized terminal workflow.
+description: >
+  Discover a curated guide for optimizing WezTerm’s configuration to boost your terminal workflow and enhance productivity.
 ---
 
 Here are some recommendations, tips, and best practices for configuring `WezTerm` to enhance your terminal workflow.

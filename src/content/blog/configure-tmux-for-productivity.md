@@ -11,9 +11,8 @@ tags:
   - productivity
   - terminal
   - configuration
-description:
-  A comprehensive guide on setting up and customizing tmux for an optimized terminal
-  workflow.
+description: >
+  Unleash tmux’s potential with this practical guide to tailoring your terminal environment for peak productivity and streamlined workflows.
 ---
 
 Here are some recommendations, tips, and best practices for configuring `tmux` to enhance your terminal workflow.
