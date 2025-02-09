@@ -1,7 +1,7 @@
 ---
 author: Tanmay Panda
-pubDatetime: 2025-02-09T16:00:00Z
-modDatetime: 2025-02-09T16:00:00Z
+pubDatetime: 2025-01-19T13:58:07Z
+modDatetime: 2025-01-09T14:51:02Z
 title: Deploying Next.js on AWS EC2 with Docker & Nginx (Comprehensive Guide)
 slug: nextjs-deploy-ec2-nginx
 featured: false

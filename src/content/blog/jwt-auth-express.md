@@ -1,7 +1,7 @@
 ---
 author: Tanmay Panda
-pubDatetime: 2025-02-09T16:00:00Z
-modDatetime: 2025-02-09T16:00:00Z
+pubDatetime: 2025-01-09T16:32:11Z
+modDatetime: 2025-01-09T16:47:23Z
 title: Complete Guide to JWT Authentication and Authorization in Express
 slug: jwt-authentication-authorization-express
 featured: true

@@ -1,7 +1,7 @@
 ---
 author: Tanmay Panda
-pubDatetime: 2025-02-09T15:30:00Z
-modDatetime: 2025-02-09T15:30:00Z
+pubDatetime: 2024-09-09T15:39:56Z
+modDatetime: 2025-01-05T14:32:45Z
 title: React Redux with TypeScript - Type-Safe State Management
 slug: react-redux-typescript-guide
 featured: true
