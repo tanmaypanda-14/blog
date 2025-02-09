@@ -12,7 +12,7 @@ tags:
   - terminal
   - configuration
 description:
-  A comprehensive guide on setting up and customizing tmux for an optimized terminal
+  A guide on setting up and customizing tmux for an optimized terminal
   workflow.
 ---
 
