@@ -1,6 +1,7 @@
 ---
 author: Tanmay Panda
-pubDatetime: 2025-02-09T12:00:00Z
+pubDatetime: 2022-09-23T15:22:00Z
+modDatetime: 2023-12-21T09:12:47.400Z
 title: Configuring tmux for Productivity
 slug: configuring-tmux-for-productivity
 featured: true

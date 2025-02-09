@@ -1,6 +1,7 @@
 ---
 author: Tanmay Panda
-pubDatetime: 2025-02-09T12:00:00Z
+pubDatetime: 2023-07-21T10:11:06.130Z
+modDatetime: 2024-01-03T14:53:25Z
 title: Configuring WezTerm for Productivity
 slug: configuring-wezterm-for-productivity
 featured: true
