@@ -23,9 +23,9 @@ Infinite scrolling improves user experience by loading content dynamically as us
 
 ## Prerequisites
 
-- Node.js and npm/yarn installed  
-- A running Redis instance (environment variable REDIS_URL configured)  
-- Familiarity with Express, React, Redux, and React Query  
+- Node.js and npm/yarn installed
+- A running Redis instance (environment variable REDIS_URL configured)
+- Familiarity with Express, React, Redux, and React Query
 - Basic knowledge of asynchronous JavaScript
 
 ## Backend Setup: Redis Caching
@@ -79,17 +79,14 @@ const fetchItems = async ({ pageParam = 1 }) => {
 
 export default function InfiniteScrollList() {
   const dispatch = useDispatch();
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery(
-    "items",
-    fetchItems,
-    {
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery("items", fetchItems, {
       getNextPageParam: (lastPage, pages) =>
         lastPage.hasMore ? pages.length + 1 : undefined,
-    }
-  );
+    });
 
   // Handle scroll event to trigger loading the next page
-  const handleScroll = (e) => {
+  const handleScroll = e => {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
     if (scrollHeight - scrollTop === clientHeight && hasNextPage) {
       fetchNextPage();
@@ -102,7 +99,7 @@ export default function InfiniteScrollList() {
     <div style={{ height: "80vh", overflowY: "auto" }} onScroll={handleScroll}>
       {data?.pages.map((page, i) => (
         <React.Fragment key={i}>
-          {page.items.map((item) => (
+          {page.items.map(item => (
             <div key={item.id}>
               {/* ...render item details... */}
               <p>{item.name}</p>
@@ -145,8 +142,9 @@ export default infiniteScrollSlice.reducer;
 ## Conclusion
 
 By following these steps, your guide now provides a comprehensive explanation of how to implement infinite scrolling:
-- Caching backend API responses using Redis  
-- Fetching paginated data efficiently using React Query  
-- Optionally enhancing state management with Redux  
+
+- Caching backend API responses using Redis
+- Fetching paginated data efficiently using React Query
+- Optionally enhancing state management with Redux
 
 Customize the snippets to match your application needs and further expand on each section as required.

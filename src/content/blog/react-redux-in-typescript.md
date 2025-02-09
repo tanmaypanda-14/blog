@@ -44,13 +44,13 @@ export interface User {
   id: string;
   name: string;
   email: string;
-  role: 'admin' | 'user';
+  role: "admin" | "user";
 }
 
 export interface AuthState {
   user: User | null;
   isAuthenticated: boolean;
-  loading: 'idle' | 'pending' | 'succeeded' | 'failed';
+  loading: "idle" | "pending" | "succeeded" | "failed";
   error: string | null;
 }
 
@@ -64,9 +64,9 @@ export interface RootState {
 
 ```typescript
 // store/index.ts
-import { configureStore } from '@reduxjs/toolkit';
-import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
-import authReducer from './authSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
+import authReducer from "./authSlice";
 
 export const store = configureStore({
   reducer: {
@@ -86,13 +86,13 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 ```typescript
 // store/authSlice.ts
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { AuthState, User } from '../types/store';
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { AuthState, User } from "../types/store";
 
 const initialState: AuthState = {
   user: null,
   isAuthenticated: false,
-  loading: 'idle',
+  loading: "idle",
   error: null,
 };
 
@@ -100,30 +100,32 @@ export const loginUser = createAsyncThunk<
   User,
   { email: string; password: string },
   { rejectValue: string }
->('auth/login', async (credentials, { rejectWithValue }) => {
+>("auth/login", async (credentials, { rejectWithValue }) => {
   try {
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
     });
-    
+
     if (!response.ok) {
-      throw new Error('Login failed');
+      throw new Error("Login failed");
     }
-    
+
     const data = await response.json();
     return data as User;
   } catch (error) {
-    return rejectWithValue(error instanceof Error ? error.message : 'Login failed');
+    return rejectWithValue(
+      error instanceof Error ? error.message : "Login failed"
+    );
   }
 });
 
 const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
-    logout: (state) => {
+    logout: state => {
       state.user = null;
       state.isAuthenticated = false;
     },
@@ -133,20 +135,20 @@ const authSlice = createSlice({
       }
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
-      .addCase(loginUser.pending, (state) => {
-        state.loading = 'pending';
+      .addCase(loginUser.pending, state => {
+        state.loading = "pending";
         state.error = null;
       })
       .addCase(loginUser.fulfilled, (state, action: PayloadAction<User>) => {
-        state.loading = 'succeeded';
+        state.loading = "succeeded";
         state.user = action.payload;
         state.isAuthenticated = true;
       })
       .addCase(loginUser.rejected, (state, action) => {
-        state.loading = 'failed';
-        state.error = action.payload ?? 'Unknown error occurred';
+        state.loading = "failed";
+        state.error = action.payload ?? "Unknown error occurred";
       });
   },
 });
@@ -159,19 +161,16 @@ export default authSlice.reducer;
 
 ```typescript
 // store/selectors.ts
-import { RootState } from './index';
-import { createSelector } from '@reduxjs/toolkit';
+import { RootState } from "./index";
+import { createSelector } from "@reduxjs/toolkit";
 
 export const selectAuth = (state: RootState) => state.auth;
 
-export const selectUser = createSelector(
-  selectAuth,
-  (auth) => auth.user
-);
+export const selectUser = createSelector(selectAuth, auth => auth.user);
 
 export const selectIsAdmin = createSelector(
   selectUser,
-  (user) => user?.role === 'admin'
+  user => user?.role === "admin"
 );
 ```
 
@@ -190,7 +189,7 @@ interface LoginFormProps {
 export const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
   const dispatch = useAppDispatch();
   const { loading, error } = useAppSelector(state => state.auth);
-  
+
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
@@ -199,7 +198,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = await dispatch(loginUser(credentials));
-    
+
     if (loginUser.fulfilled.match(result) && onSuccess) {
       onSuccess();
     }
@@ -236,10 +235,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
 
 ```typescript
 // hooks/useAuth.ts
-import { useAppSelector, useAppDispatch } from '../store';
-import { selectUser, selectIsAdmin } from '../store/selectors';
-import { logout, updateUser } from '../store/authSlice';
-import type { User } from '../types/store';
+import { useAppSelector, useAppDispatch } from "../store";
+import { selectUser, selectIsAdmin } from "../store/selectors";
+import { logout, updateUser } from "../store/authSlice";
+import type { User } from "../types/store";
 
 export const useAuth = () => {
   const dispatch = useAppDispatch();
@@ -269,18 +268,19 @@ export const useAuth = () => {
 
 ```typescript
 // middleware/authMiddleware.ts
-import { Middleware } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { Middleware } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
-export const authMiddleware: Middleware<{}, RootState> = store => next => action => {
-  const result = next(action);
-  
-  if (action.type === 'auth/logout') {
-    localStorage.removeItem('token');
-  }
-  
-  return result;
-};
+export const authMiddleware: Middleware<{}, RootState> =
+  store => next => action => {
+    const result = next(action);
+
+    if (action.type === "auth/logout") {
+      localStorage.removeItem("token");
+    }
+
+    return result;
+  };
 ```
 
 ## Best Practices
@@ -307,7 +307,7 @@ export const authMiddleware: Middleware<{}, RootState> = store => next => action
 2. Optimize component rendering with proper memoization.
 
 ```typescript
-import { createSelector } from '@reduxjs/toolkit';
+import { createSelector } from "@reduxjs/toolkit";
 
 const selectUsers = (state: RootState) => state.users.list;
 const selectFilter = (state: RootState) => state.users.filter;
@@ -320,6 +320,6 @@ export const selectFilteredUsers = createSelector(
 
 ## Conclusion
 
-A well-organized store is like a perfectly planned date—everything falls into place, and you might even feel a bit *excited* when your actions get dispatched. Enjoy the fun of building a robust, type-safe Redux application!
+A well-organized store is like a perfectly planned date—everything falls into place, and you might even feel a bit _excited_ when your actions get dispatched. Enjoy the fun of building a robust, type-safe Redux application!
 
 For more information, refer to the official [Redux Toolkit TypeScript documentation](https://redux-toolkit.js.org/usage/usage-with-typescript).

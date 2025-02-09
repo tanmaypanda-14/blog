@@ -24,15 +24,18 @@ This guide offers a comprehensive look at deploying a modern Next.js application
 ## Theoretical Background
 
 ### Containerization and Orchestration
+
 - **Containerization:** Encapsulates your app and dependencies for consistency.
 - **Docker:** Now in its 20.x release, Docker minimizes “works on my machine” issues.
 - **Orchestration:** Consider Docker Compose or Kubernetes to manage scaling and multiple containers.
 
 ### Load Balancing and Reverse Proxy
+
 - **Nginx:** With its stable 1.24+ release, it provides SSL termination, caching, and efficient traffic routing.
 - **Load Balancing Strategy:** Distribute requests across multiple app instances or even different EC2 nodes using upstream configuration.
 
 ### Security and Monitoring
+
 - **Security:** Emphasizes HTTPS with automated certificates (e.g., Let’s Encrypt), secure headers, and proper token handling.
 - **Monitoring:** Leverage Docker logging, AWS CloudWatch, and Prometheus for real-time performance insights.
 - **High Availability:** Integrate with AWS ELB for fault-tolerant architectures.
@@ -49,6 +52,7 @@ This guide offers a comprehensive look at deploying a modern Next.js application
 We use Node 18-alpine for enhanced performance and security, ensuring a smaller image size.
 
 1. Create a `Dockerfile` in your project root:
+
    ```docker
    FROM node:18-alpine
    WORKDIR /app
@@ -67,11 +71,13 @@ We use Node 18-alpine for enhanced performance and security, ensuring a smaller 
 Deploying on EC2 entails several preparatory steps:
 
 1. **Launching the Instance:**
+
    - Use Ubuntu 22.04 LTS.
    - Configure the security group to allow ports 80, 443, and 3000.
    - Consider provisioning an Elastic IP for stability.
 
 2. **Installing Docker:**
+
    ```bash
    sudo apt update && sudo apt install -y docker.io
    sudo systemctl enable --now docker
@@ -90,12 +96,15 @@ Deploying on EC2 entails several preparatory steps:
 Nginx is set up to serve as the gateway to your Next.js container:
 
 1. **Installation and Setup:**
+
    ```bash
    sudo apt update && sudo apt install nginx -y
    ```
 
 2. **Editing the Configuration:**
+
    - Modify `/etc/nginx/sites-available/default`:
+
      ```nginx
      upstream nextjs_app {
          server 127.0.0.1:3000;
@@ -165,14 +174,16 @@ Nginx is set up to serve as the gateway to your Next.js container:
 To ensure a smooth, secure, and maintainable deployment, integrate the following tools and configurations directly into your workflow:
 
 - **CI/CD Pipelines:**
+
   - Setup GitHub Actions, Jenkins, or GitLab CI with configuration files such as:
+
     ```yaml
     # .github/workflows/deploy.yml (GitHub Actions example)
     name: Deploy Next.js App
 
     on:
       push:
-        branches: [ main ]
+        branches: [main]
 
     jobs:
       build-and-deploy:
@@ -196,22 +207,23 @@ To ensure a smooth, secure, and maintainable deployment, integrate the following
             run: |
               ssh -o StrictHostKeyChecking=no ubuntu@your-ec2 'docker pull your-repo/nextjs-app:latest && docker run -dp 3000:3000 your-repo/nextjs-app:latest'
     ```
+
 - **Logging & Monitoring:**
   - **Centralized Logging:** Configure the ELK Stack or AWS CloudWatch. For example, add a Fluentd configuration to forward Docker logs.
     ```yaml
     # Fluentd Docker logging config snippet
     <source>
-      @type tail
-      path /var/lib/docker/containers/*/*.log
-      pos_file /var/log/fluentd-docker.pos
-      tag docker.*
-      format json
+    @type tail
+    path /var/lib/docker/containers/*/*.log
+    pos_file /var/log/fluentd-docker.pos
+    tag docker.*
+    format json
     </source>
     <match docker.**>
-      @type elasticsearch
-      host your-elasticsearch-server
-      port 9200
-      logstash_format true
+    @type elasticsearch
+    host your-elasticsearch-server
+    port 9200
+    logstash_format true
     </match>
     ```
   - **Performance Monitoring:** Use Prometheus and Grafana by running respective containers alongside your app.

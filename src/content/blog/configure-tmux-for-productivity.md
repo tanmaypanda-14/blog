@@ -128,13 +128,13 @@ bind % split-window -h -c "#{pane_current_path}"
 
 ## Splitting Windows and Navigating Panes
 
-| Shortcut         | Description             |
-| ---------------- | ----------------------- |
-| `Ctrl-Space "`   | Split pane horizontally |
-| `Ctrl-Space %`   | Split pane vertically   |
-| `Alt + Arrow`    | Move between panes      |
-| `Shift + Arrow`  | Switch between windows  |
-| `Ctrl-Space x`   | Close the current pane  |
+| Shortcut        | Description             |
+| --------------- | ----------------------- |
+| `Ctrl-Space "`  | Split pane horizontally |
+| `Ctrl-Space %`  | Split pane vertically   |
+| `Alt + Arrow`   | Move between panes      |
+| `Shift + Arrow` | Switch between windows  |
+| `Ctrl-Space x`  | Close the current pane  |
 
 ## Plugins for tmux
 
@@ -158,4 +158,3 @@ Reload `tmux` and press `Ctrl-Space I` to install the plugins.
 ## Conclusion
 
 By customizing `tmux`, you can greatly improve your productivity and workflow within the terminal. Experiment with different settings and plugins to create an optimal setup that works for you.
-
