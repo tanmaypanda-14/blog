@@ -33,7 +33,7 @@ export default function SearchBar({ searchList }: Props) {
   const fuse = useMemo(
     () =>
       new Fuse(searchList, {
-        keys: ["title", "description"],
+        keys: ["author", "title", "description"],
         includeMatches: true,
         minMatchCharLength: 2,
         threshold: 0.5,
