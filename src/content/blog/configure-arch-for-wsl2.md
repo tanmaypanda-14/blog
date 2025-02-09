@@ -1,7 +1,7 @@
 ---
 author: Shivani Swaraj
-pubDatetime: 2025-02-09T15:22:00Z
-modDatetime: 2025-02-09T17:12:47.400Z
+pubDatetime: 2025-02-09T5:22:00Z
+modDatetime: 2025-02-09T7:12:47.400Z
 title: ArchWSL2 Installation and Usage Guide
 slug: archwsl2-installation-and-usage-guide
 featured: false
