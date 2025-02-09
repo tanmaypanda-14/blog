@@ -2,6 +2,7 @@ import { LOCALE, SITE } from "@config";
 import type { CollectionEntry } from "astro:content";
 
 interface DatetimesProps {
+  author: string;
   pubDatetime: string | Date;
   modDatetime: string | Date | undefined | null;
 }
@@ -17,6 +18,7 @@ interface Props extends DatetimesProps, EditPostProps {
 }
 
 export default function Datetime({
+  author,
   pubDatetime,
   modDatetime,
   size = "sm",
@@ -47,6 +49,7 @@ export default function Datetime({
       )}
       <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
         <FormattedDatetime
+          author={author}
           pubDatetime={pubDatetime}
           modDatetime={modDatetime}
         />
@@ -56,7 +59,11 @@ export default function Datetime({
   );
 }
 
-const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
+const FormattedDatetime = ({
+  author,
+  pubDatetime,
+  modDatetime,
+}: DatetimesProps) => {
   const myDatetime = new Date(
     modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime
   );
@@ -78,6 +85,8 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
       <span aria-hidden="true"> | </span>
       <span className="sr-only">&nbsp;at&nbsp;</span>
       <span className="text-nowrap">{time}</span>
+      <span aria-hidden="true"> | </span>
+      <span className="text-nowrap">{author}</span>
     </>
   );
 };
