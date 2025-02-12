@@ -85,8 +85,11 @@ const FormattedDatetime = ({
       <span aria-hidden="true"> | </span>
       <span className="sr-only">&nbsp;at&nbsp;</span>
       <span className="text-nowrap">{time}</span>
-      <span aria-hidden="true"> | </span>
-      <span className="text-nowrap">{author}</span>
+      <span className="hidden sm:inline" aria-hidden="true">
+        {" "}
+        |{" "}
+      </span>
+      <span className="hidden text-nowrap sm:inline">{author}</span>
     </>
   );
 };
