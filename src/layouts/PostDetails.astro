@@ -30,6 +30,8 @@ const {
 
 const { Content } = await render(post);
 
+console.log(post.data);
+
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
   ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
@@ -81,6 +83,7 @@ const nextPost =
       {title}
     </h1>
     <Datetime
+      author={author}
       pubDatetime={pubDatetime}
       modDatetime={modDatetime}
       size="lg"
@@ -93,7 +96,7 @@ const nextPost =
     </article>
 
     <ul class="my-8">
-      {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
+      {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
     </ul>
 
     <div
