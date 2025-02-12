@@ -8,6 +8,7 @@ import { type CollectionEntry, render } from "astro:content";
 import readingTime from "reading-time";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
+import PostComments from "@components/PostComments.astro";
 import { SITE } from "@config";
 
 export interface Props {
@@ -30,7 +31,7 @@ const {
 } = post.data;
 
 const { Content } = await render(post);
-const { text: readingTimeText } = readingTime(post.body ?? "")
+const { text: readingTimeText } = readingTime(post.body ?? "");
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
@@ -184,6 +185,7 @@ const nextPost =
         )
       }
     </div>
+    <PostComments />
   </main>
   <Footer />
 </Layout>

@@ -1,0 +1,50 @@
+---
+const { theme = "catppuccin_mocha" } = Astro.props;
+
+const repo = import.meta.env.PUBLIC_GISCUS_REPO;
+const repoId = import.meta.env.PUBLIC_GISCUS_REPO_ID;
+const category = import.meta.env.PUBLIC_GISCUS_CATEGORY;
+const categoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
+---
+
+<section class="giscus mx-auto mt-10 w-full"></section>
+
+<script
+  src="https://giscus.app/client.js"
+  data-repo={repo}
+  data-repo-id={repoId}
+  data-category={category}
+  data-category-id={categoryId}
+  data-mapping="url"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme={theme}
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+  is:inline></script>
+
+<script is:inline>
+  function setGiscusTheme(theme) {
+    const iframe = document.querySelector(".giscus-frame");
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme } } },
+        "*"
+      );
+    }
+  }
+
+  function updateTheme() {
+    const currentTheme = localStorage.getItem("theme") || "dark";
+    const giscusTheme =
+      currentTheme === "light" ? "catppuccin_latte" : "catppuccin_mocha";
+    setGiscusTheme(giscusTheme);
+  }
+
+  document.addEventListener("DOMContentLoaded", updateTheme);
+  window.addEventListener("themeChange", updateTheme);
+</script>
