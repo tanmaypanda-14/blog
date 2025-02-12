@@ -1,4 +1,4 @@
-import { SITE } from "@config";
+import { SITE } from "consts";
 import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
@@ -11,6 +11,7 @@ const blog = defineCollection({
       pubDatetime: z.date(),
       modDatetime: z.date().optional().nullable(),
       title: z.string(),
+      slug: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
