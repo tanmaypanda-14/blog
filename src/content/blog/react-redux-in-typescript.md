@@ -16,7 +16,7 @@ description: >
   Delve into a detailed approach to managing state with Redux in React using TypeScript, featuring robust type safety and practical best practices.
 ---
 
-# React Redux with TypeScript - Type-Safe State Management
+## Table of contents
 
 ## Introduction
 

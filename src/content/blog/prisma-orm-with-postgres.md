@@ -15,7 +15,7 @@ tags:
 description: An extensive guide covering everything from basic Prisma ORM concepts to advanced production implementations with PostgreSQL, including performance optimization, security best practices, and real-world deployment scenarios.
 ---
 
-# The Ultimate Guide to Prisma ORM with PostgreSQL
+## Table of contents
 
 ## Introduction
 

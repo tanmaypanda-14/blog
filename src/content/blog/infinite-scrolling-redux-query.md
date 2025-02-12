@@ -15,7 +15,7 @@ tags:
 description: A guide for implementing infinite scrolling with React Query for data fetching, React Redux for state management, and Redis for caching.
 ---
 
-# Implementing Infinite Scrolling with Redis, React-Redux & React Query
+## Table of contents
 
 ## Introduction
 

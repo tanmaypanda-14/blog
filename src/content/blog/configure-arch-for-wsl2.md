@@ -15,7 +15,7 @@ description: >
   Master installing and configuring ArchWSL2 to create a powerful Linux environment on Windows, complete with troubleshooting tips and best practices.
 ---
 
-# ArchWSL2 Installation and Usage Guide
+## Table of contents
 
 ## Introduction
 

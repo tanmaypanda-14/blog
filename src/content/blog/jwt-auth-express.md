@@ -16,7 +16,7 @@ tags:
 description: A comprehensive guide to implementing JWT-based authentication and authorization in Express applications, including best practices, security considerations, and complete implementation examples.
 ---
 
-# Complete Guide to JWT Authentication and Authorization in Express
+## Table of contents
 
 ## Introduction
 

@@ -15,7 +15,7 @@ tags:
 description: A comprehensive guide to deploying a Next.js application on AWS EC2 using Docker for containerization and Nginx for load balancing and reverse proxy, including in-depth theoretical background, troubleshooting, advanced monitoring, and a suite of additional tools for ease-of-use, security, logging, and CI/CD.
 ---
 
-# Deploying a Next.js Application on AWS EC2 with Docker and Nginx
+## Table of contents
 
 ## Introduction
 
