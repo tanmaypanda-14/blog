@@ -1,4 +1,4 @@
-import { LOCALE, SITE } from "consts";
+import { LOCALE, SITE } from "@config";
 import type { CollectionEntry } from "astro:content";
 
 interface DatetimesProps {

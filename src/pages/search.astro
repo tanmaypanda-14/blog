@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { SITE } from "consts";
+import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
@@ -13,12 +13,12 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
 const sortedPosts = getSortedPosts(posts);
 
 // List of items to search in
-const searchList = sortedPosts.map(({ data, slug }) => ({
+const searchList = sortedPosts.map(({ data, id }) => ({
   author: data.author,
   title: data.title,
   description: data.description,
   data,
-  slug,
+  id,
 }));
 ---
 
