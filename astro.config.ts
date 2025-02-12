@@ -8,7 +8,6 @@ import { SITE } from "./src/config";
 
 import compress from "astro-compress";
 
-// https://astro.build/config
 export default defineConfig({
   site: SITE.website,
   integrations: [
@@ -32,7 +31,6 @@ export default defineConfig({
       ],
     ],
     shikiConfig: {
-      // For more themes, visit https://shiki.style/themes
       themes: { light: "catppuccin-latte", dark: "catppuccin-mocha" },
       wrap: true,
     },
