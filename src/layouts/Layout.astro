@@ -64,6 +64,7 @@ const structuredData = {
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
@@ -125,9 +126,6 @@ const structuredData = {
     <meta name="theme-color" content="" />
 
     {
-      // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
-      // include google-site-verification tag in the heading
-      // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
       googleSiteVerification && (
         <meta
           name="google-site-verification"
@@ -145,20 +143,20 @@ const structuredData = {
   </body><script>
     document.addEventListener("DOMContentLoaded", function () {
       const colors = [
-        "245, 224, 220", // Rosewater
-        "242, 205, 205", // Flamingo
-        "245, 194, 231", // Pink
-        "203, 166, 247", // Mauve
-        "243, 139, 168", // Red
-        "235, 160, 172", // Maroon
-        "250, 179, 135", // Peach
-        "249, 226, 175", // Yellow
-        "166, 227, 161", // Green
-        "148, 226, 213", // Teal
-        "137, 220, 235", // Sky
-        "116, 199, 236", // Sapphire
-        "137, 180, 250", // Blue
-        "180, 190, 254", // Lavender
+        "245, 224, 220",
+        "242, 205, 205",
+        "245, 194, 231",
+        "203, 166, 247",
+        "243, 139, 168",
+        "235, 160, 172",
+        "250, 179, 135",
+        "249, 226, 175",
+        "166, 227, 161",
+        "148, 226, 213",
+        "137, 220, 235",
+        "116, 199, 236",
+        "137, 180, 250",
+        "180, 190, 254",
       ];
 
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
