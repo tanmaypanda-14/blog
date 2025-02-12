@@ -140,27 +140,5 @@ const structuredData = {
   </head>
   <body>
     <slot />
-  </body><script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const colors = [
-        "245, 224, 220",
-        "242, 205, 205",
-        "245, 194, 231",
-        "203, 166, 247",
-        "243, 139, 168",
-        "235, 160, 172",
-        "250, 179, 135",
-        "249, 226, 175",
-        "166, 227, 161",
-        "148, 226, 213",
-        "137, 220, 235",
-        "116, 199, 236",
-        "137, 180, 250",
-        "180, 190, 254",
-      ];
-
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      document.documentElement.style.setProperty("--color-accent", randomColor);
-    });
-  </script>
+  </body>
 </html>
