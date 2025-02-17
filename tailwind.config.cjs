@@ -58,7 +58,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        mono: ["JetBrains Mono", "monospace"],
+        mono: ["Monaspace Neon"],
       },
 
       typography: {
